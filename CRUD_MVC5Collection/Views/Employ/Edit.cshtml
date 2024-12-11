@@ -1,0 +1,31 @@
+﻿@model CRUD_MVC5Collection.Models.Employ
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<table>
+    @using (Html.BeginForm("Edit", "Employ"))
+    {
+        <tr>
+            <td>Name</td>
+            <td>@Html.TextBoxFor(m => m.Name)</td>
+        </tr>
+        <tr>
+            <td>Salary</td>
+            <td>@Html.TextBoxFor(m => m.Salary)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Update" /></td>
+        </tr>
+    }
+</table>
+
+@if (ViewBag.Message != null)
+ {
+                <h2>@ViewBag.Message</h2>
+ }
+
+    <h2>@Html.ActionLink("View All","Index")</h2>

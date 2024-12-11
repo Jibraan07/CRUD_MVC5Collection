@@ -1,0 +1,31 @@
+﻿@model IEnumerable<CRUD_MVC5Collection.Models.Employ>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h1>list of Employees</h1>
+<table border="1" cellpadding="20px">
+    <tr>
+        <th>EmpId</th>
+        <th>Name</th>
+        <th>Salary</th>
+    </tr>
+    @foreach(var emp in Model)
+            {
+
+               <tr>
+                   <td>@emp.Id</td>
+                   <td>@emp.Name</td>
+                   <td>@emp.Salary</td>
+                    <td>@Html.ActionLink("Edit", "Edit", new {id=emp.Id})</td>
+                   <td>@Html.ActionLink("Delete", "Delete", new { id = emp.Id }) </td>
+               </tr>
+            }
+</table>
+
+<h3>@Html.ActionLink("Create New", "create")</h3>
+
+
+
